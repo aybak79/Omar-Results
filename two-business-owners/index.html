@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>The Two Business Owners | Omar</title>
+  <meta name="description" content="Same start. Same skills. One made three times more. A short letter on the one decision that made the difference.">
+  <meta name="theme-color" content="#E8EDEF">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The Two Business Owners">
+  <meta property="og:description" content="Same start. Same skills. One made three times more. Here's why.">
+  <meta property="og:url" content="https://aybak79.github.io/Omar-Results/two-business-owners/">
+  <meta property="og:image" content="https://aybak79.github.io/Omar-Results/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Ocean Slate tokens (mirrors /styles.css), with a serif body for the letter. */
+    :root {
+      --surface: #E8EDEF;
+      --raised: #F7F9FA;
+      --ink: #16262E;
+      --ink-muted: #4A5A62;
+      --slate: #34596B;
+      --mist: #9DB8C2;
+      --rust: #A0633F;
+      --on-rust: #FFF7F0;
+
+      --font-brand: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --font-serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+      --font-hand: "Caveat", "Segoe Script", cursive;
+
+      --line: 3px solid var(--ink);
+      --shadow-lg: 10px 10px 0 var(--ink);
+      --shadow-pressed: 3px 3px 0 var(--ink);
+      --ease: cubic-bezier(.2, .7, .3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    * { margin: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      background: var(--surface);
+      color: var(--ink);
+      font-family: var(--font-serif);
+      font-size: 19px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    @supports (overflow-x: clip) { body { overflow-x: clip; } }
+    ::selection { background: var(--mist); color: var(--ink); }
+    :focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+
+    /* ---------- The letter ---------- */
+    .page { padding: 56px 20px 80px; }
+    .letter {
+      max-width: 680px;
+      margin-inline: auto;
+      overflow-wrap: break-word;
+    }
+    @media (min-width: 760px) {
+      .page { padding: 80px 32px 110px; }
+      .letter {
+        max-width: 780px;
+        background: var(--raised);
+        border: var(--line);
+        box-shadow: var(--shadow-lg);
+        padding: 72px 50px 80px;
+      }
+    }
+
+    .letter__head {
+      text-align: center;
+      padding-bottom: 36px;
+      margin-bottom: 40px;
+      border-bottom: var(--line);
+    }
+    h1 {
+      font-family: var(--font-brand);
+      font-weight: 700;
+      font-size: clamp(38px, 7vw, 56px);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+    .subhead {
+      margin-top: 18px;
+      font-style: italic;
+      font-size: clamp(20px, 2.6vw, 23px);
+      line-height: 1.45;
+      color: var(--ink-muted);
+      text-wrap: balance;
+    }
+
+    .letter p + p { margin-top: 1.1em; }
+    .salutation { margin-bottom: 1.1em; }
+
+    h2 {
+      font-family: var(--font-brand);
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 1.3;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin: 2.4em 0 0.9em;
+    }
+
+    ol {
+      margin: 1.1em 0;
+      padding-left: 1.6em;
+    }
+    ol li { padding-left: 0.3em; }
+    ol li + li { margin-top: 0.4em; }
+    ol li::marker { font-weight: 700; }
+    ol + p { margin-top: 1.1em; }
+
+    .case strong { font-weight: 700; }
+
+    /* ---------- Signature ---------- */
+    .signoff { margin-top: 2.2em; }
+    .letter .signature {
+      font-family: var(--font-hand);
+      font-weight: 600;
+      font-size: 46px;
+      line-height: 1.1;
+      margin-top: 4px;
+    }
+
+    /* ---------- P.S. ---------- */
+    .ps {
+      margin-top: 2.4em;
+      padding-top: 1.4em;
+      border-top: 2px dashed var(--mist);
+      font-style: italic;
+    }
+    .ps strong {
+      font-family: var(--font-brand);
+      font-style: normal;
+      font-weight: 700;
+      margin-right: 0.25em;
+    }
+
+    /* ---------- Call to action ---------- */
+    .cta {
+      margin-top: 48px;
+      text-align: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 460px;
+      min-height: 64px;
+      padding: 20px 32px;
+      font-family: var(--font-brand);
+      font-weight: 700;
+      font-size: clamp(20px, 2.4vw, 23px);
+      line-height: 1.2;
+      text-decoration: none;
+      background: var(--rust);
+      color: var(--on-rust);
+      border: var(--line);
+      box-shadow: var(--shadow-lg);
+      transition: transform .15s var(--ease), box-shadow .15s var(--ease);
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn:hover { transform: translate(7px, 7px); box-shadow: var(--shadow-pressed); }
+    .btn:active { transform: translate(10px, 10px); box-shadow: 0 0 0 var(--ink); }
+    .btn__arrow { transition: transform .15s var(--ease); }
+    .btn:hover .btn__arrow { transform: translateX(4px); }
+    @media (prefers-reduced-motion: reduce) {
+      .btn, .btn__arrow { transition: none; }
+    }
+    @media (max-width: 480px) {
+      .btn { box-shadow: 6px 6px 0 var(--ink); }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <article class="letter">
+      <header class="letter__head">
+        <h1>The Two Business Owners</h1>
+        <p class="subhead">Same start. Same skills. One made three times more. Here's why.</p>
+      </header>
+
+      <p class="salutation">Dear Business Owner,</p>
+
+      <p>In the bleak midwinter, about a year ago, two business owners opened the same kind of business, at the same time, in the same city.</p>
+
+      <p>They were very much alike, these two. Both were skilled at what they did. Both were well liked by their customers. And both, as new business owners usually are, were filled with ambitious dreams of growth.</p>
+
+      <p>Recently, the two met again at an industry event.</p>
+
+      <p>They were still very much alike. Both offered the same service. Both had a long list of happy clients. Both were talented, and both were loved for it.</p>
+
+      <p>But there was a difference. One of them was making three times as much money as the other. And the other had no idea, because by his own measure, business was going great.</p>
+
+      <h2>What Made The Difference</h2>
+
+      <p>Have you ever wondered, as I have, what makes this kind of difference between two people? It isn't raw intelligence, talent, or even hard work. It isn't that one wants success and the other doesn't.</p>
+
+      <p>The difference lies in the decisions each one made, and how they made them. One decision above all: who they trusted to help them grow.</p>
+
+      <p>That is why I am writing to you, and to business owners like you. Because the people you bring into your business will either move it forward or keep it exactly where it is.</p>
+
+      <h2>A Strategic Marketer Unlike Any Other</h2>
+
+      <p>You see, the right strategic marketer is rare. Before he ever sends you a message, he has already studied your niche. He knows who your customers are, what makes them buy, and what makes them walk away.</p>
+
+      <p>He studies what the top players in your market are doing, which campaigns are working for them, and where the gaps are. And he does not reach out to a single business owner until he has found a specific problem in that business that he knows how to fix. A problem that, once fixed, brings in more clients.</p>
+
+      <h2>The Right Decision Is Key</h2>
+
+      <p>Deciding whether to hire a marketer is a big decision. Knowing how to choose the right one is an even bigger one.</p>
+
+      <p>A great strategic marketer doesn't guess what you or your customers want. He knows it before the first call. He knows the problem he's going to solve before you've even described it.</p>
+
+      <p>Why? Because a good marketer will never waste your time, or his own, pitching a business he isn't sure he can help. Only marketers chasing a quick paycheck do that. The real ones do this work because they enjoy watching a business grow and its owner succeed.</p>
+
+      <p>If you have never worked with a strategic marketer like this, you cannot imagine how useful one can be to you.</p>
+
+      <h2>A Time and Money Saving Offer</h2>
+
+      <p>Put my words to the test with a free 15 minute call. Before we book it, I'll need three things from you:</p>
+
+      <ol>
+        <li>Your niche</li>
+        <li>Your website</li>
+        <li>A few lines on how business has been this past month. Nothing long, just an honest snapshot.</li>
+      </ol>
+
+      <p>I don't take on every business owner who reaches out. I research your business and your market first, and I only move forward if I find a problem I'm confident I can solve. That way, neither of us wastes a minute.</p>
+
+      <p>Simply click the email button below and send me those three things. Within 24 hours, I'll reply to confirm that my research has begun and we'll schedule our call. By the time we speak, I will have finished studying your business and will come prepared with a clear plan for the problem I found.</p>
+
+      <h2>My Guarantee</h2>
+
+      <p>I won't promise you overnight results. Anyone who does is just selling you something. What I will guarantee is this: if we decide to work together, you will see a real, positive change in your business by the end of our first month.</p>
+
+      <p>About those two business owners I mentioned at the beginning of this letter: they started at the same time, with the same skills, in the same market. So what made their businesses so different?</p>
+
+      <p>One decision. Choosing to hire a strategic marketer, and choosing the right one.</p>
+
+      <h2>An Investment In Success</h2>
+
+      <p class="case"><strong>Worst case:</strong> we decide we're not the right fit, and you walk away from the call with a few fresh ideas you can use in your business right away.</p>
+
+      <p class="case"><strong>Best case:</strong> we work together, and a year from now, you're the business owner making three times as much.</p>
+
+      <div class="signoff">
+        <p>Sincerely,</p>
+        <p class="signature">Omar</p>
+      </div>
+
+      <p class="ps"><strong>P.S.</strong> Because I research every business before we ever speak, I can only take on a few new clients at a time. If you'd like to be one of them, click the email button below and send over your niche, your website, and last month's snapshot today.</p>
+
+      <div class="cta">
+        <a class="btn" href="mailto:omaraybak89@gmail.com?subject=Free%2015%20minute%20call&amp;body=Niche%3A%0AWebsite%3A%0ALast%20month%20in%20a%20few%20lines%3A">Email Me Your 3 Things <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
