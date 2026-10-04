@@ -1,9 +1,6 @@
-*.stackdump
-
-# Astro / Node
+# Dependencies and build output
 node_modules/
 dist/
-.astro/
 
 # Vercel
 .vercel/
@@ -12,3 +9,8 @@ dist/
 .env
 .env.*
 !.env.example
+
+# OS / tooling noise
+*.stackdump
+.DS_Store
+Thumbs.db
