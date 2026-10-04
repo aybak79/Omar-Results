@@ -1,0 +1,11 @@
+---
+interface Props {
+  id: string | number;
+  question: string;
+}
+const { id, question } = Astro.props;
+---
+<div class="faq__item">
+  <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls={`faq-a${id}`} id={`faq-q${id}`}><span>{question}</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+  <div class="faq__a" id={`faq-a${id}`} role="region" aria-labelledby={`faq-q${id}`}><div class="faq__inner"><slot /></div></div>
+</div>

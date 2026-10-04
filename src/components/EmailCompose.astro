@@ -1,0 +1,23 @@
+---
+import { EMAIL } from "../site";
+
+interface Props {
+  /** Full mailto: link, including subject/body. */
+  href: string;
+  /** Reveal stagger step (sets --d). */
+  delay?: number;
+}
+const { href, delay } = Astro.props;
+---
+<div class="compose" data-reveal style={delay ? `--d:${delay}` : undefined}>
+  <span class="sticker sticker--inbox">Real human inbox</span>
+  <div class="mock-bar compose__bar" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="compose__body">
+    <slot name="draft" />
+    <a class="btn btn--rust btn--xl" href={href}><slot /></a>
+    <p class="compose__copy">Or copy it: <span class="compose__email">{EMAIL}</span>
+      <button class="copy-btn" type="button" data-copy={EMAIL}>Copy</button>
+      <span class="visually-hidden" role="status" aria-live="polite" data-copy-status></span>
+    </p>
+  </div>
+</div>

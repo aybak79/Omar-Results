@@ -1,1 +1,14 @@
 *.stackdump
+
+# Astro / Node
+node_modules/
+dist/
+.astro/
+
+# Vercel
+.vercel/
+
+# Env
+.env
+.env.*
+!.env.example
