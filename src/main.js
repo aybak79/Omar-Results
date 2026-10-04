@@ -1,7 +1,10 @@
 import { inject } from "@vercel/analytics";
+import { injectSpeedInsights } from "@vercel/speed-insights";
 
-// Vercel Web Analytics (page views). Only reports on the deployed site.
+// Vercel Web Analytics (page views) and Speed Insights (performance).
+// Both only report on the deployed site.
 inject();
+injectSpeedInsights();
 
 (function () {
   "use strict";
@@ -14,6 +17,32 @@ inject();
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  // Mobile nav: Menu button opens the link panel
+  var navToggle = document.querySelector("[data-nav-toggle]");
+  var nav = document.getElementById("site-nav");
+  if (navToggle && nav) {
+    var setNav = function (open) {
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      nav.classList.toggle("is-open", open);
+    };
+    navToggle.addEventListener("click", function () {
+      setNav(navToggle.getAttribute("aria-expanded") !== "true");
+    });
+    nav.addEventListener("click", function (e) {
+      if (e.target.closest("a")) setNav(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && nav.classList.contains("is-open")) {
+        setNav(false);
+        navToggle.focus();
+      }
+    });
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".site-header")) setNav(false);
+    });
+    window.matchMedia("(min-width: 960px)").addEventListener("change", function () { setNav(false); });
   }
 
   // Reveal blocks as they scroll into view

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="partials/head.html"></include>
+
+  <meta name="robots" content="noindex">
+  <title>Still in the lab | Omar Results</title>
+  <meta name="description" content="This page is still being researched, written, and tested. It'll launch when it's worth your click.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Still in the lab | Omar Results">
+  <meta property="og:description" content="This page is still being researched, written, and tested. It'll launch when it's worth your click.">
+  <meta property="og:url" content="https://omar-results.vercel.app/coming-soon/">
+
+  <link rel="stylesheet" href="/src/styles/coming-soon.css">
+  <script type="module" src="/src/coming-soon.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="partials/header.html"></include>
+
+  <main id="main">
+    <section class="hero soon" aria-labelledby="soon-title">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow hero__eyebrow"><span aria-hidden="true">⚗</span> Still in the lab</p>
+          <h1 id="soon-title" class="hero__title">This one's <span class="highlight highlight--hero">still testing.</span></h1>
+          <p class="lead hero__lead" data-soon-line>This page isn't live yet, and that's on purpose.</p>
+          <p class="soon__body">I don't launch anything I haven't tested. Not ads, not landing pages, and definitely not my own website. This one is still being researched, written, and rewritten until it's actually worth your click.</p>
+          <div class="hero__cta soon__cta">
+            <a class="btn btn--primary btn--lg" href="/"><span class="btn__arrow btn__arrow--back" aria-hidden="true">←</span> Back to the homepage</a>
+            <p class="hero__note">Can't wait? <a href="mailto:omaraybak89@gmail.com?subject=What's%20coming%20next%3F">Email me</a> and I'll tell you what's coming. Spoilers included.</p>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="status" role="img" aria-label="Launch checklist: research done, copy in progress, testing in progress, launch date: soon.">
+            <span class="sticker status__sticker" aria-hidden="true">Coming soon</span>
+            <div class="mock-bar" aria-hidden="true"><i></i><i></i><i></i><span class="mock-url">launch-checklist.txt</span></div>
+            <div class="status__body" aria-hidden="true">
+              <p class="status__title">Campaign status: <span data-soon-name>New page</span></p>
+              <div class="status__row"><span>Research</span><span class="status__track"><span class="status__fill" style="--w:100%"></span></span><span class="status__val">Done</span></div>
+              <div class="status__row"><span>Copy</span><span class="status__track"><span class="status__fill" style="--w:70%"></span></span><span class="status__val">70%</span></div>
+              <div class="status__row"><span>Testing</span><span class="status__track"><span class="status__fill status__fill--rust" style="--w:40%"></span></span><span class="status__val">40%</span></div>
+              <p class="status__eta"><b>Launch date:</b> Soon. Real soon, not agency soon.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <include src="partials/footer.html"></include>
+</body>
+</html>

@@ -9,6 +9,7 @@ const root = import.meta.dirname;
 const pages = {
   home: "index.html",
   twoBusinessOwners: "two-business-owners/index.html",
+  comingSoon: "coming-soon/index.html",
 };
 
 // <include src="partials/x.html" key="value">content</include>
