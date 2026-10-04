@@ -1,5 +1,6 @@
 import { inject } from "@vercel/analytics";
 import { injectSpeedInsights } from "@vercel/speed-insights";
+import { burst } from "./motion.js";
 
 // Vercel Web Analytics (page views) and Speed Insights (performance).
 // Both only report on the deployed site.
@@ -110,6 +111,7 @@ injectSpeedInsights();
       attempt.then(function () {
         copyBtn.textContent = "Copied!";
         copyBtn.classList.add("is-copied");
+        burst(copyBtn);
         if (status) status.textContent = "Email address copied to clipboard";
         clearTimeout(resetTimer);
         resetTimer = setTimeout(function () {

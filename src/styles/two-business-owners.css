@@ -266,3 +266,44 @@
 }
 .ltr-cta .btn--xl { min-height: 64px; }
   
+
+/* ---------- Micro-interactions (shared ones live in motion.css) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  /* Hero: the bars race, then B pulls ahead */
+  .duo__fill { animation: bar-fill 1s var(--ease) .5s both; }
+  .duo__b .duo__fill { animation-delay: .8s; }
+  .duo__b .duo__fill--money { animation-duration: 1.4s; }
+  .duo__sticker { animation: pop .4s var(--ease) 2s both, bob 3.4s ease-in-out 2.4s infinite; }
+
+  /* Letter: stamp, steps and signature arrive as each box scrolls in */
+  .js [data-reveal].is-in .ltr-stamp { animation: stamp-in .5s var(--ease) .5s both; }
+  .js [data-reveal].is-in .ltr-steps li { animation: rise .45s var(--ease) both; }
+  .js [data-reveal].is-in .ltr-steps li:nth-child(2) { animation-delay: .12s; }
+  .js [data-reveal].is-in .ltr-steps li:nth-child(3) { animation-delay: .24s; }
+  .js [data-reveal].is-in .ltr-sig { animation: write-in 1.3s cubic-bezier(.6, 0, .3, 1) .4s both; }
+  .js [data-reveal].is-in .ltr-template span::after { animation: type-in .6s var(--ease) both; transform-origin: 0 50%; }
+  .js [data-reveal].is-in .ltr-template span:nth-child(2)::after { animation-delay: .2s; }
+  .js [data-reveal].is-in .ltr-template span:nth-child(3)::after { animation-delay: .4s; }
+}
+@keyframes bar-fill { from { width: 0; } }
+@keyframes write-in { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+
+.duo__card { transition: translate .25s var(--ease), box-shadow .25s var(--ease); }
+.ltr-steps li { transition: translate .2s var(--ease), box-shadow .2s var(--ease); }
+.ltr-steps li::before { transition: rotate .3s var(--ease); }
+.ltr-case { transition: rotate .3s var(--ease), translate .3s var(--ease), box-shadow .3s var(--ease); }
+.js .ltr-ps[data-reveal] {
+  transition-property: opacity, translate, rotate, box-shadow;
+  transition-duration: .6s, .6s, .3s, .3s;
+  transition-timing-function: var(--ease);
+}
+@media (hover: hover) {
+  .duo__card:hover { translate: -3px -3px; box-shadow: var(--shadow-xl); }
+  .ltr-steps li:hover { translate: -3px -3px; box-shadow: var(--shadow-md); }
+  .ltr-steps li:hover::before { rotate: -10deg; }
+  .ltr-case:hover { translate: -3px -3px; box-shadow: var(--shadow-lg); }
+  .ltr-case--best:hover { rotate: 1deg; }
+}
+@media (hover: hover) and (min-width: 768px) {
+  .js .ltr-ps[data-reveal].is-in:hover { rotate: 1deg; box-shadow: var(--shadow-lg); }
+}
