@@ -1,3 +1,8 @@
+import { inject } from "@vercel/analytics";
+
+// Vercel Web Analytics (page views). Only reports on the deployed site.
+inject();
+
 (function () {
   "use strict";
 
