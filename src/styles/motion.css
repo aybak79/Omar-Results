@@ -41,7 +41,8 @@
    otherwise wipe out the hover transitions of these elements. */
 .js .card[data-reveal],
 .js .point[data-reveal],
-.js .compose[data-reveal] {
+.js .compose[data-reveal],
+.js .dossier[data-reveal] {
   transition-property: opacity, translate, transform, box-shadow;
   transition-duration: .6s, .6s, .25s, .25s;
   transition-delay: calc(var(--d, 0) * 90ms), calc(var(--d, 0) * 90ms), 0s, 0s;

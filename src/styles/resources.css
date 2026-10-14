@@ -1,0 +1,217 @@
+/* Resources: the free guide and its questionnaire. Everything else comes from global.css. */
+
+/* Buttons set their own display, which would beat the hidden attribute. */
+.quiz [hidden] { display: none !important; }
+
+.guide__grid { display: grid; gap: var(--space-7); align-items: start; }
+@media (min-width: 960px) {
+  .guide__grid { grid-template-columns: 1fr minmax(0, 520px); gap: var(--space-7); }
+  .quiz { position: sticky; top: calc(var(--header-h) + var(--space-5)); }
+}
+.guide__copy { min-width: 0; }
+.guide__title {
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.guide__title .highlight { margin-top: .15em; }
+
+/* PDF cover plus the "what's inside" list */
+.guide__inside {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+  margin-top: var(--space-7);
+}
+@media (min-width: 560px) {
+  .guide__inside { grid-template-columns: 200px 1fr; }
+}
+.guide__inside-title {
+  font-size: var(--fs-h3);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-4);
+}
+.guide__inside .checklist li { font-weight: 500; }
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  aspect-ratio: 8.5 / 11;
+  background: var(--slate);
+  color: var(--on-slate);
+  border: var(--line);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-4);
+  transform: rotate(-3deg);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+@media (hover: hover) {
+  .cover:hover { transform: rotate(0deg) translate(-4px, -4px); box-shadow: var(--shadow-xl); }
+}
+.cover__kicker {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--mist);
+  padding-bottom: var(--space-2);
+  border-bottom: var(--border-thin) solid var(--mist);
+}
+.cover__title {
+  margin-top: var(--space-4);
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.cover__hl {
+  display: inline;
+  background: var(--rust);
+  color: var(--on-rust);
+  padding: 0 .12em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.cover__by {
+  margin-top: auto;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--mist);
+}
+
+/* ---------- The questionnaire card ---------- */
+.quiz {
+  background: var(--raised);
+  border: var(--line);
+  box-shadow: var(--shadow-xl);
+  padding: var(--space-5);
+}
+@media (min-width: 768px) {
+  .quiz { padding: var(--space-6); }
+}
+.quiz__intro { font-weight: 700; font-size: var(--fs-body); }
+
+.quiz__progress { margin: var(--space-4) 0 var(--space-5); }
+.quiz__count {
+  font-family: var(--mono);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: var(--space-2);
+}
+.quiz__track { height: 14px; background: var(--surface); border: var(--border-thin) solid var(--ink); }
+.quiz__fill { display: block; height: 100%; width: 20%; background: var(--rust); transition: width .35s var(--ease); }
+
+.quiz__trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.quiz__step { border: 0; padding: 0; margin: 0; min-width: 0; }
+.quiz__step.is-entering { animation: step-in .3s var(--ease) both; }
+@keyframes step-in {
+  from { opacity: 0; translate: 16px 0; }
+}
+.quiz__q {
+  padding: 0;
+  font-size: clamp(22px, 2.4vw, 26px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-4);
+}
+.quiz__q:focus { outline: none; }
+.quiz__q:focus-visible { outline: var(--border-thick) solid var(--slate); outline-offset: 4px; }
+.quiz__help { margin: calc(-1 * var(--space-2)) 0 var(--space-4); color: var(--ink-muted); font-size: 15px; }
+
+/* Big tappable options. Real radio buttons underneath, so keyboards and screen readers work. */
+.quiz__options { display: grid; gap: 10px; }
+.option { position: relative; display: block; cursor: pointer; }
+.option input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.option span {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.3;
+  background: var(--raised);
+  border: var(--border-thin) solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  padding: 12px 14px 12px 44px;
+  position: relative;
+  transition: transform .12s var(--ease), box-shadow .12s var(--ease), background-color .12s;
+}
+.option span::before {
+  content: "";
+  position: absolute;
+  left: 14px; top: 50%;
+  width: 18px; height: 18px;
+  translate: 0 -50%;
+  border: var(--border-thin) solid var(--ink);
+  background: var(--raised);
+}
+@media (hover: hover) {
+  .option:hover span { background: var(--surface); transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--ink); }
+}
+.option input:focus-visible + span { outline: var(--border-thick) solid var(--slate); outline-offset: 3px; }
+.option input:checked + span { background: var(--mist); font-weight: 700; }
+.option input:checked + span::before { background: var(--rust); box-shadow: inset 0 0 0 3px var(--raised); }
+.option input[aria-invalid] + span { border-color: var(--rust); }
+
+.quiz__other { margin-top: var(--space-4); }
+.quiz__other label { display: block; font-weight: 700; font-size: 15px; margin-bottom: var(--space-2); }
+
+.quiz__input {
+  width: 100%;
+  font: inherit;
+  font-size: 17px;
+  color: var(--ink);
+  background: var(--raised);
+  border: var(--line);
+  padding: 12px 14px;
+  border-radius: 0;
+}
+.quiz__input--lg { font-size: 20px; padding: 14px 16px; }
+.quiz__input:focus { outline: none; box-shadow: var(--shadow-sm); border-color: var(--slate); }
+.quiz__input[aria-invalid] { border-color: var(--rust); }
+.quiz__input::placeholder { color: var(--ink-muted); opacity: .7; }
+
+.quiz__error { margin-top: var(--space-3); font-weight: 700; font-size: 15px; color: var(--rust); }
+.quiz__error:empty { display: none; }
+
+.quiz__nav {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+.quiz__next { margin-left: auto; }
+.quiz__back { background: var(--raised); color: var(--ink); }
+.quiz .btn:disabled { opacity: .6; cursor: wait; transform: none; box-shadow: var(--shadow-sm); }
+.btn:hover .btn__arrow--back { transform: translateX(-4px); }
+.quiz__fine { margin-top: var(--space-3); font-size: var(--fs-small); color: var(--ink-muted); }
+
+/* ---------- Thank-you state ---------- */
+.quiz__done-title {
+  font-size: clamp(26px, 3vw, 34px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-5);
+}
+.quiz__done-title:focus { outline: none; }
+.quiz__download { width: 100%; }
+.quiz__done-body { margin-top: var(--space-5); line-height: 1.55; }
+.quiz__done-body a { font-weight: 700; color: var(--ink); word-break: break-word; }
+
+.quiz__site {
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: var(--border-thin) dashed var(--ink);
+}
+.quiz__site label { display: block; font-weight: 700; margin-bottom: var(--space-3); }
+.quiz__site-row { display: flex; gap: var(--space-3); }
+.quiz__site-row .quiz__input { flex: 1; min-width: 0; }
+.quiz__site-row .btn { padding-block: 12px; font-size: 16px; box-shadow: var(--shadow-sm); }
+.quiz__site-ok { font-weight: 700; color: var(--slate); }
+.quiz__site-ok:empty { display: none; }

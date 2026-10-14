@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="partials/head.html"></include>
+
+  <meta name="robots" content="noindex">
+  <title>Case File 001: The Therapist | Omar Results</title>
+  <meta name="description" content="A therapist's Google Ads went nowhere. A rebuilt campaign and a dedicated landing page brought 5 new clients in 2 months.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Case File 001: The Therapist">
+  <meta property="og:description" content="Ads that went nowhere, then 5 new clients in 2 months.">
+  <meta property="og:url" content="{{site}}/case-studies/therapist">
+
+  <link rel="stylesheet" href="/src/styles/case-studies.css">
+</head>
+<body>
+  <a class="skip-link" href="#file">Skip to the case file</a>
+
+  <include src="partials/header.html"></include>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero files-hero" aria-labelledby="file-title">
+      <div class="container">
+        <div class="hero__copy">
+          <p class="eyebrow hero__eyebrow"><span aria-hidden="true">🗂</span> Case file 001</p>
+          <h1 id="file-title" class="hero__title">From dead ads to a <span class="highlight highlight--hero">fuller practice.</span></h1>
+          <p class="lead hero__lead">Google Ads, a dedicated landing page, and a lot of watching what real visitors did.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The file -->
+    <section class="section band band--slate" id="file" aria-label="Case file 001">
+      <div class="container">
+        <include src="partials/casefile-001.html" level="2" sub="3"></include>
+
+        <include src="partials/exhibits.html" level="2"></include>
+
+        <div class="file-back">
+          <a class="btn btn--primary btn--lg" href="/case-studies"><span class="btn__arrow btn__arrow--back" aria-hidden="true">←</span> All case files</a>
+          <a class="btn btn--rust btn--lg" href="mailto:omaraybak89@gmail.com?subject=I%20read%20case%20file%20001">Get results like this <span class="btn__arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <include src="partials/footer.html"></include>
+</body>
+</html>

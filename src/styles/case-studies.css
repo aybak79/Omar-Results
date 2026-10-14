@@ -1,0 +1,180 @@
+/* Case files: the collection and each file. Everything else comes from global.css. */
+
+/* ---------- The collection ---------- */
+.dossiers {
+  display: grid;
+  gap: 72px var(--space-6);
+  list-style: none;
+  padding: 38px 0 0;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .dossiers { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1100px) {
+  .dossiers { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* One folder. The real file is a link, the locked ones are buttons. */
+.dossier {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  text-align: left;
+  font: inherit;
+  color: var(--ink);
+  text-decoration: none;
+  background: var(--sand);
+  border: var(--line);
+  box-shadow: var(--shadow-md);
+  padding: 40px var(--space-5) var(--space-5);
+  cursor: pointer;
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+}
+@media (hover: hover) {
+  .dossier:hover { transform: translate(-4px, -4px); box-shadow: var(--shadow-lg); }
+}
+.dossier:active { transform: translate(2px, 2px); box-shadow: var(--shadow-sm); }
+.dossier:focus-visible { outline: var(--border-thick) solid var(--slate); outline-offset: 4px; }
+.dossier:hover .btn__arrow,
+.dossier:focus-visible .btn__arrow { transform: translateX(4px); }
+
+.dossier__tab {
+  position: absolute;
+  top: -38px; left: calc(-1 * var(--border-thick));
+  height: 38px;
+  display: flex; align-items: center;
+  padding-inline: var(--space-4);
+  background: var(--sand);
+  border: var(--line);
+  border-bottom: 0;
+  font-family: var(--mono);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.dossier__clip {
+  position: absolute;
+  top: -34px; left: 58%;
+  width: 26px; height: 70px;
+}
+.dossier__stamp {
+  position: absolute;
+  top: var(--space-4); right: var(--space-4);
+  font-family: var(--mono);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--rust);
+  border: var(--border-thin) solid var(--rust);
+  background: var(--raised);
+  padding: 4px 10px;
+  transform: rotate(var(--tilt-sticker));
+}
+.dossier__stamp--locked { color: var(--ink); border-color: var(--ink); }
+
+.dossier__title {
+  display: block;
+  margin-top: var(--space-5);
+  font-size: clamp(22px, 2.3vw, var(--fs-h3));
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+.dossier__meta {
+  display: block;
+  margin-top: var(--space-2);
+  font-family: var(--mono);
+  font-size: var(--fs-small);
+  color: var(--ink-muted);
+}
+.dossier__stat {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: var(--border-thin) dashed var(--ink);
+  font-weight: 700;
+  line-height: 1.2;
+}
+.dossier__num {
+  font-size: var(--fs-stat);
+  line-height: .8;
+  letter-spacing: -0.05em;
+  color: var(--rust);
+}
+.dossier__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: auto;
+  padding-top: var(--space-5);
+  font-weight: 700;
+}
+
+/* ---------- Locked folders ---------- */
+.dossier--locked { background: var(--surface); }
+.dossier__bar {
+  display: inline-block;
+  vertical-align: -0.1em;
+  width: 5.5em; height: .95em;
+  background: var(--ink);
+  transform: rotate(-1.5deg);
+}
+.dossier__bar--short { width: 3.6em; }
+.dossier__bar--line { width: 9em; height: .8em; background: var(--mist); }
+.dossier__cta--locked { color: var(--ink-muted); }
+
+/* Clicking a locked folder stamps it "Still cooking" */
+.dossier__cooking {
+  align-self: flex-start;
+  margin-top: var(--space-5);
+  font-family: var(--mono);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--on-rust);
+  background: var(--rust);
+  border: var(--line);
+  box-shadow: var(--shadow-sm);
+  padding: 6px 12px;
+  transform: rotate(-4deg);
+  opacity: 0;
+  scale: .6;
+  transition: opacity .2s var(--ease), scale .3s var(--ease);
+}
+.dossier.is-cooking .dossier__cooking { opacity: 1; scale: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .dossier.is-shaking { animation: shake .4s var(--ease); }
+}
+@keyframes shake {
+  20% { translate: -6px 0; }
+  40% { translate: 6px 0; }
+  60% { translate: -4px 0; }
+  80% { translate: 3px 0; }
+}
+
+.dossiers__note {
+  margin-top: var(--space-6);
+  min-height: 1.5em;
+  font-size: var(--fs-body);
+  font-weight: 700;
+  text-align: center;
+}
+
+/* ---------- A single file ---------- */
+.band--slate .casefile { margin-top: 40px; }
+.band--slate .exhibits__title { color: var(--on-slate); }
+.file-back {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-7);
+}

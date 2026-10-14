@@ -865,6 +865,65 @@ h1, h2, h3, h4 { font-weight: 700; }
 .casefile__next p { font-size: 18px; font-weight: 500; }
 .casefile__fine { margin-top: var(--space-5); font-size: var(--fs-small); color: var(--ink-muted); font-weight: 500; }
 
+/* Client messages, pinned like evidence. Used under a case file. */
+.exhibits { margin-top: var(--space-7); }
+.exhibits__title {
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-6);
+}
+.exhibits__grid { display: grid; gap: var(--space-7) var(--space-6); }
+@media (min-width: 900px) {
+  .exhibits__grid { grid-template-columns: 1fr 1fr; align-items: start; }
+}
+.exhibit {
+  position: relative;
+  background: var(--raised);
+  color: var(--ink);
+  border: var(--line);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-6) var(--space-4) var(--space-4);
+  transform: rotate(var(--tilt-card));
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.exhibit:nth-child(2) { transform: rotate(1.5deg); }
+@media (min-width: 900px) {
+  .exhibit:nth-child(2) { margin-top: var(--space-7); }
+}
+@media (hover: hover) {
+  .exhibit:hover { transform: rotate(0deg) translate(-4px, -4px); box-shadow: var(--shadow-xl); }
+}
+.exhibit__label {
+  position: absolute;
+  top: -18px; left: var(--space-4);
+  font-family: var(--mono);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  background: var(--sand);
+  border: var(--border-thin) solid var(--ink);
+  padding: 6px 10px;
+}
+.exhibit__pin {
+  position: absolute;
+  top: -11px; right: var(--space-5);
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--rust);
+  border: var(--border-thin) solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+.exhibit__shot { display: block; border: var(--border-thin) solid var(--ink); }
+.exhibit__shot img { display: block; width: 100%; height: auto; }
+.exhibit__shot:focus-visible { outline: var(--border-thick) solid var(--slate); outline-offset: 4px; }
+.exhibit figcaption {
+  margin-top: var(--space-3);
+  font-size: 15px;
+  font-weight: 700;
+}
+
 /* ---------- Process ---------- */
 .process {
   display: grid;

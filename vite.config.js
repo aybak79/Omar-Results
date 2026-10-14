@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 
 const root = import.meta.dirname;
@@ -14,6 +14,10 @@ const SITE_URL = "https://omar-results.vercel.app";
 // index: true lists the page in sitemap.xml. Keep it false for noindex pages.
 const pages = {
   home: { file: "index.html", path: "/", index: true },
+  swipes: { file: "swipes/index.html", path: "/swipes", index: false },
+  caseStudies: { file: "case-studies/index.html", path: "/case-studies", index: false },
+  caseStudyTherapist: { file: "case-studies/therapist/index.html", path: "/case-studies/therapist", index: false },
+  resources: { file: "resources/index.html", path: "/resources", index: true },
   twoBusinessOwners: { file: "two-business-owners/index.html", path: "/two-business-owners", index: false },
   comingSoon: { file: "coming-soon/index.html", path: "/coming-soon", index: false },
   hardestWorkingEgypt: {
@@ -102,8 +106,31 @@ function seoFiles() {
   };
 }
 
+// Runs the Vercel functions in api/ on the local dev server, so forms work
+// with plain `npm run dev`. Secrets come from .env.local (never committed).
+function apiDev() {
+  return {
+    name: "api-dev",
+    apply: "serve",
+    configureServer(server) {
+      Object.assign(process.env, loadEnv("development", root, ""));
+      server.middlewares.use("/api", async (req, res, next) => {
+        const name = req.url.split(/[?#]/)[0].replace(/^\/+|\/+$/g, "");
+        if (!/^[\w-]+$/.test(name)) return next();
+        try {
+          const { default: handler } = await server.ssrLoadModule(`/api/${name}.js`);
+          await handler(req, res);
+        } catch (error) {
+          server.config.logger.error(String(error));
+          if (!res.headersSent) { res.statusCode = 500; res.end(); }
+        }
+      });
+    },
+  };
+}
+
 export default defineConfig({
-  plugins: [htmlIncludes(), cleanPaths(), seoFiles(), react()],
+  plugins: [htmlIncludes(), cleanPaths(), seoFiles(), apiDev(), react()],
   build: {
     rollupOptions: {
       input: Object.fromEntries(Object.entries(pages).map(([name, page]) => [name, resolve(root, page.file)])),

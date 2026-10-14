@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="partials/head.html"></include>
+
+  <title>Free Guide: The 5-Second Homepage Test | Omar Results</title>
+  <meta name="description" content="Not getting as many clients as you want? The free 5-Second Homepage Test shows you exactly why. 10 checks, 5 minutes, just your phone.">
+  <link rel="canonical" href="{{site}}/resources">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Your Website Is Sending Customers to Your Competitors">
+  <meta property="og:description" content="The free 5-Second Homepage Test shows you exactly why. 10 checks, 5 minutes, just your phone.">
+  <meta property="og:url" content="{{site}}/resources">
+
+  <link rel="stylesheet" href="/src/styles/resources.css">
+  <script type="module" src="/src/resources.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#guide-form">Skip to the questions</a>
+
+  <include src="partials/header.html"></include>
+
+  <main id="main">
+    <section class="hero guide" aria-labelledby="guide-title">
+      <div class="container guide__grid">
+
+        <!-- Left: the pitch -->
+        <div class="hero__copy guide__copy">
+          <p class="eyebrow hero__eyebrow"><span aria-hidden="true">✦</span> Free guide</p>
+          <h1 id="guide-title" class="guide__title">Your Website Is Sending Customers to <span class="highlight">Your Competitors</span></h1>
+          <p class="lead hero__lead">Not getting as many clients as you want? The 5-Second Homepage Test shows you exactly why.</p>
+          <ul class="chips" role="list">
+            <li class="chip"><span aria-hidden="true">✓</span> 10 checks</li>
+            <li class="chip"><span aria-hidden="true">⏱</span> 5 minutes</li>
+            <li class="chip"><span aria-hidden="true">☎</span> Just your phone</li>
+          </ul>
+
+          <div class="guide__inside">
+            <div class="cover" aria-hidden="true">
+              <p class="cover__kicker">The 5-Second Homepage Test</p>
+              <p class="cover__title">Your Website Is Sending Customers to <span class="cover__hl">Your Competitors</span></p>
+              <p class="cover__by">Omar Results · Free guide</p>
+            </div>
+
+            <div>
+              <h2 class="guide__inside-title">What's inside</h2>
+              <ul class="checklist">
+                <li>The 10 things that make visitors leave without calling</li>
+                <li>A scorecard you fill in from your phone</li>
+                <li>What your score means, and what to fix first</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: the questionnaire -->
+        <div class="quiz" id="guide-form">
+          <form class="quiz__form" novalidate data-quiz>
+            <p class="quiz__intro">5 quick questions, then your free guide is yours.</p>
+
+            <div class="quiz__progress">
+              <p class="quiz__count" aria-live="polite" data-quiz-count>Question 1 of 5</p>
+              <div class="quiz__track" aria-hidden="true"><span class="quiz__fill" data-quiz-fill></span></div>
+            </div>
+
+            <!-- Bots fill this in. People never see it. -->
+            <div class="quiz__trap" aria-hidden="true">
+              <label>Company <input type="text" name="company" tabindex="-1" autocomplete="off"></label>
+            </div>
+
+            <!-- Q1 -->
+            <fieldset class="quiz__step" data-step data-required-choice="businessType" data-error="Pick the closest one. Close enough is fine.">
+              <legend class="quiz__q" tabindex="-1">What kind of business do you run?</legend>
+              <div class="quiz__options">
+                <label class="option"><input type="radio" name="businessType" value="Therapist or counselor"><span>Therapist or counselor</span></label>
+                <label class="option"><input type="radio" name="businessType" value="Nutritionist or dietitian"><span>Nutritionist or dietitian</span></label>
+                <label class="option"><input type="radio" name="businessType" value="Dentist"><span>Dentist</span></label>
+                <label class="option"><input type="radio" name="businessType" value="Med spa or salon"><span>Med spa or salon</span></label>
+                <label class="option"><input type="radio" name="businessType" value="Home services (HVAC, plumbing, contractor)"><span>Home services (HVAC, plumbing, contractor)</span></label>
+                <label class="option"><input type="radio" name="businessType" value="Gym or fitness"><span>Gym or fitness</span></label>
+                <label class="option"><input type="radio" name="businessType" value="Restaurant"><span>Restaurant</span></label>
+                <label class="option"><input type="radio" name="businessType" value="Law firm"><span>Law firm</span></label>
+                <label class="option"><input type="radio" name="businessType" value="Other"><span>Other</span></label>
+              </div>
+              <div class="quiz__other" hidden data-other>
+                <label for="businessOther">What kind of business?</label>
+                <input class="quiz__input" id="businessOther" name="businessOther" type="text" maxlength="200" data-other-error="Tell me what you do. One or two words is plenty.">
+              </div>
+              <p class="quiz__error" role="alert" data-step-error></p>
+            </fieldset>
+
+            <!-- Q2 -->
+            <fieldset class="quiz__step" data-step data-required-choice="struggle" data-error="Pick the one that stings the most." hidden>
+              <legend class="quiz__q" tabindex="-1">What's the hardest part of getting clients right now?</legend>
+              <div class="quiz__options">
+                <label class="option"><input type="radio" name="struggle" value="I depend on referrals and slow months hurt"><span>I depend on referrals and slow months hurt</span></label>
+                <label class="option"><input type="radio" name="struggle" value="People visit my website but don't call or book"><span>People visit my website but don't call or book</span></label>
+                <label class="option"><input type="radio" name="struggle" value="People can't find me on Google"><span>People can't find me on Google</span></label>
+                <label class="option"><input type="radio" name="struggle" value="I've paid for ads that didn't work"><span>I've paid for ads that didn't work</span></label>
+                <label class="option"><input type="radio" name="struggle" value="I don't have time to deal with marketing"><span>I don't have time to deal with marketing</span></label>
+                <label class="option"><input type="radio" name="struggle" value="Other"><span>Other</span></label>
+              </div>
+              <div class="quiz__other" hidden data-other>
+                <label for="struggleOther">What's getting in the way?</label>
+                <input class="quiz__input" id="struggleOther" name="struggleOther" type="text" maxlength="200" data-other-error="Give me the short version. I'm listening.">
+              </div>
+              <p class="quiz__error" role="alert" data-step-error></p>
+            </fieldset>
+
+            <!-- Q3 -->
+            <fieldset class="quiz__step" data-step data-required-choice="complaint" data-error="Pick one. I promise I can take it." hidden>
+              <legend class="quiz__q" tabindex="-1">Be honest. What's the worst thing about marketers you've dealt with?</legend>
+              <p class="quiz__help">No wrong answers. This helps me not be that guy.</p>
+              <div class="quiz__options">
+                <label class="option"><input type="radio" name="complaint" value="They promised a lot and delivered little"><span>They promised a lot and delivered little</span></label>
+                <label class="option"><input type="radio" name="complaint" value="They locked me into a long contract"><span>They locked me into a long contract</span></label>
+                <label class="option"><input type="radio" name="complaint" value="I never understood what I was paying for"><span>I never understood what I was paying for</span></label>
+                <label class="option"><input type="radio" name="complaint" value="They disappeared or were slow to reply"><span>They disappeared or were slow to reply</span></label>
+                <label class="option"><input type="radio" name="complaint" value="They kept control of my website or accounts"><span>They kept control of my website or accounts</span></label>
+                <label class="option"><input type="radio" name="complaint" value="I've never hired one, and I'm not sure who to trust"><span>I've never hired one, and I'm not sure who to trust</span></label>
+                <label class="option"><input type="radio" name="complaint" value="Other"><span>Other</span></label>
+              </div>
+              <div class="quiz__other" hidden data-other>
+                <label for="complaintOther">What did they do?</label>
+                <input class="quiz__input" id="complaintOther" name="complaintOther" type="text" maxlength="200" data-other-error="Spill it. Short version is fine.">
+              </div>
+              <p class="quiz__error" role="alert" data-step-error></p>
+            </fieldset>
+
+            <!-- Q4 -->
+            <fieldset class="quiz__step" data-step hidden>
+              <legend class="quiz__q" tabindex="-1"><label for="firstName">What's your first name?</label></legend>
+              <input class="quiz__input quiz__input--lg" id="firstName" name="firstName" type="text" maxlength="80" autocomplete="given-name" required data-error="I'd like to know who I'm talking to. First name is plenty.">
+              <p class="quiz__error" role="alert" data-step-error></p>
+            </fieldset>
+
+            <!-- Q5 -->
+            <fieldset class="quiz__step" data-step hidden>
+              <legend class="quiz__q" tabindex="-1"><label for="email">Where should I send your guide?</label></legend>
+              <input class="quiz__input quiz__input--lg" id="email" name="email" type="email" maxlength="200" autocomplete="email" inputmode="email" placeholder="you@yourbusiness.com" required data-error="Need your email so the guide has somewhere to go." data-invalid-error="That email looks a little off. Mind checking it?">
+              <p class="quiz__error" role="alert" data-step-error></p>
+            </fieldset>
+
+            <div class="quiz__nav">
+              <button class="btn quiz__back" type="button" data-quiz-back hidden><span class="btn__arrow btn__arrow--back" aria-hidden="true">←</span> Back</button>
+              <button class="btn btn--primary quiz__next" type="submit" data-quiz-next>Next <span class="btn__arrow" aria-hidden="true">→</span></button>
+            </div>
+            <p class="quiz__fine" data-quiz-fine hidden>No spam. Just the guide and the occasional useful email. Unsubscribe anytime.</p>
+            <p class="quiz__error quiz__error--submit" role="alert" data-submit-error></p>
+          </form>
+
+          <!-- Thank-you state -->
+          <div class="quiz__done" hidden data-quiz-done>
+            <h2 class="quiz__done-title" tabindex="-1" data-done-title>Done. Your guide is ready.</h2>
+            <a class="btn btn--rust btn--xl quiz__download" href="/assets/guides/5-second-homepage-test.pdf" download="The 5-Second Homepage Test.pdf">Download the guide <span class="btn__arrow" aria-hidden="true">↓</span></a>
+            <p class="quiz__done-body">When you've scored your site, email me your score at <a href="mailto:omaraybak89@gmail.com?subject=My%20score%20is%20__%2F10">omaraybak89@gmail.com</a> with the subject "My score is __/10" and I'll send your top 3 fixes, free.</p>
+
+            <form class="quiz__site" novalidate data-site-form>
+              <label for="website">Want me to look at your site now? Drop your link.</label>
+              <div class="quiz__site-row">
+                <input class="quiz__input" id="website" name="website" type="text" inputmode="url" autocomplete="url" maxlength="300" placeholder="yourbusiness.com">
+                <button class="btn btn--primary" type="submit">Send</button>
+              </div>
+              <p class="quiz__error" role="alert" data-site-error></p>
+              <p class="quiz__site-ok" role="status" data-site-ok></p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <include src="partials/footer.html"></include>
+</body>
+</html>
