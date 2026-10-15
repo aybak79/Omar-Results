@@ -62,9 +62,9 @@
 }
 .swipe__who--b { background: var(--rust); color: var(--on-rust); }
 .swipe__track { height: 14px; background: var(--raised); border: var(--border-thin) solid var(--ink); }
-.swipe__fill { display: block; height: 100%; background: var(--mist); }
+.swipe__fill { display: block; height: 100%; width: var(--w); background: var(--mist); }
 .swipe__fill--money { background: var(--rust); }
-.swipe__val { text-align: right; }
+.swipe__val { text-align: right; font-variant-numeric: tabular-nums; }
 
 .swipe__title {
   font-size: clamp(22px, 2.3vw, var(--fs-h3));
@@ -104,5 +104,6 @@
   padding: var(--space-6);
 }
 .swipe-soon__icon { font-size: 32px; line-height: 1; }
+.swipe-soon__icon .ico { width: 1em; height: 1em; }
 .swipe-soon__title { font-size: var(--fs-h3); font-weight: 700; letter-spacing: -0.02em; }
 .swipe-soon__line { font-family: var(--mono); font-size: var(--fs-small); }

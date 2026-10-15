@@ -10,7 +10,7 @@
 }
 .guide__copy { min-width: 0; }
 .guide__title {
-  font-size: clamp(38px, 5vw, 64px);
+  font-size: clamp(32px, 4vw, 50px);
   line-height: 1.05;
   letter-spacing: -0.035em;
   text-wrap: balance;

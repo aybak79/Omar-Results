@@ -1,5 +1,5 @@
 /* Coming-soon page. Everything else comes from global.css. */
-.soon { min-height: calc(100vh - var(--header-h) - 90px); display: grid; align-items: center; }
+.soon { min-height: calc(100dvh - var(--header-h) - 90px); display: grid; align-items: center; }
 .soon__body { margin-top: var(--space-4); max-width: 600px; font-size: 17px; line-height: 1.6; }
 .soon__cta .hero__note a { font-weight: 700; color: var(--ink); }
 .btn:hover .btn__arrow--back { transform: translateX(-4px); }
@@ -44,7 +44,7 @@
 .status__track { height: 14px; background: var(--surface); border: var(--border-thin) solid var(--ink); }
 .status__fill { display: block; height: 100%; width: var(--w); background: var(--mist); }
 .status__fill--rust { background: var(--rust); }
-.status__val { font-weight: 700; text-align: right; }
+.status__val { font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
 .status__eta {
   margin-top: var(--space-5);
   padding: var(--space-3) var(--space-4);

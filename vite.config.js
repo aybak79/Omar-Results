@@ -20,6 +20,9 @@ const pages = {
   resources: { file: "resources/index.html", path: "/resources", index: true },
   twoBusinessOwners: { file: "two-business-owners/index.html", path: "/two-business-owners", index: false },
   comingSoon: { file: "coming-soon/index.html", path: "/coming-soon", index: false },
+  privacy: { file: "privacy/index.html", path: "/privacy", index: false },
+  // Vercel serves 404.html for any URL that doesn't exist.
+  notFound: { file: "404.html", path: "/404", index: false },
   hardestWorkingEgypt: {
     file: "hardest-working-strategic-marketer-in-egypt/index.html",
     path: "/hardest-working-strategic-marketer-in-egypt",
@@ -65,7 +68,9 @@ function htmlIncludes() {
 // Vercel serves /page from page/index.html. The local dev and preview servers
 // only do that for /page/, so rewrite the slash-less URL to match.
 function cleanPaths() {
-  const paths = new Set(Object.values(pages).map((page) => page.path).filter((path) => path !== "/"));
+  const paths = new Set(
+    Object.values(pages).filter((page) => page.file.endsWith("/index.html")).map((page) => page.path),
+  );
   const rewrite = (req, _res, next) => {
     const [path, query] = req.url.split(/(?=\?)/);
     if (paths.has(path)) req.url = `${path}/${query ?? ""}`;

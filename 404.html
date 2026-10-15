@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="partials/head.html"></include>
+
+  <meta name="robots" content="noindex">
+  <title>Page not found | Omar Results</title>
+  <meta name="description" content="This page doesn't exist. Here's where to go instead.">
+
+  <link rel="stylesheet" href="/src/styles/coming-soon.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="partials/header.html"></include>
+
+  <main id="main">
+    <section class="hero soon" aria-labelledby="lost-title">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow hero__eyebrow">Error 404</p>
+          <h1 id="lost-title" class="hero__title">This page <span class="highlight highlight--hero">doesn't exist.</span></h1>
+          <p class="lead hero__lead">The link might be old, or there's a typo in the address. Either way, nothing's broken on your end.</p>
+          <div class="hero__cta soon__cta">
+            <a class="btn btn--primary btn--lg" href="/"><span class="btn__arrow btn__arrow--back" aria-hidden="true">←</span> Back to the homepage</a>
+            <p class="hero__note">Looking for something specific? Try the <a href="/case-studies">case studies</a>, the <a href="/resources">free guide</a>, or just <a href="mailto:omaraybak89@gmail.com?subject=I%20hit%20a%20broken%20link">email me</a>.</p>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="status" role="img" aria-label="Search results for this page: zero results found.">
+            <span class="sticker status__sticker" aria-hidden="true">Not found</span>
+            <div class="mock-bar" aria-hidden="true"><i></i><i></i><i></i><span class="mock-url">omar-results/???</span></div>
+            <div class="status__body" aria-hidden="true">
+              <p class="status__title">Search results for this page</p>
+              <div class="status__row"><span>Results</span><span class="status__track"><span class="status__fill status__fill--rust" style="--w:3%"></span></span><span class="status__val">0</span></div>
+              <p class="status__eta"><b>Ironic, right?</b> Getting found is literally my job.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <include src="partials/footer.html"></include>
+</body>
+</html>

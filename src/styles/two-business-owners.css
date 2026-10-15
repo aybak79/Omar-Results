@@ -54,9 +54,9 @@
 .duo__track { height: 14px; background: var(--raised); border: var(--border-thin) solid var(--ink); }
 .duo__a .duo__track { background: var(--raised); }
 .duo__b .duo__track { background: var(--surface); }
-.duo__fill { display: block; height: 100%; background: var(--mist); }
+.duo__fill { display: block; height: 100%; width: var(--w); background: var(--mist); }
 .duo__fill--money { background: var(--rust); }
-.duo__val { font-weight: 700; text-align: right; }
+.duo__val { font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
 .duo__sticker {
   position: absolute;
   top: -20px; right: -10px;
@@ -198,7 +198,7 @@
   background: var(--slate);
   color: var(--on-slate);
   border-top: var(--line);
-  padding-block: 96px 110px;
+  padding-block: 72px 80px;
 }
 .ltr-cta .compose { justify-self: center; margin-inline: auto; max-width: 560px; }
 .ltr-template {

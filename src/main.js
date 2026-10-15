@@ -20,6 +20,15 @@ injectSpeedInsights();
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
+  // Mark the nav link for the current page. Coming-soon links share a path,
+  // so those also have to match the ?p= query.
+  document.querySelectorAll(".site-nav__link").forEach(function (link) {
+    var url = new URL(link.href, location.href);
+    var samePath = url.pathname.replace(/\/$/, "") === location.pathname.replace(/\/$/, "");
+    var sameQuery = !url.search || url.search === location.search;
+    if (samePath && sameQuery) link.setAttribute("aria-current", "page");
+  });
+
   // Mobile nav: Menu button opens the link panel
   var navToggle = document.querySelector("[data-nav-toggle]");
   var nav = document.getElementById("site-nav");
@@ -109,7 +118,7 @@ injectSpeedInsights();
         : fallbackCopy(text);
 
       attempt.then(function () {
-        copyBtn.textContent = "Copied!";
+        copyBtn.textContent = "Copied";
         copyBtn.classList.add("is-copied");
         burst(copyBtn);
         if (status) status.textContent = "Email address copied to clipboard";

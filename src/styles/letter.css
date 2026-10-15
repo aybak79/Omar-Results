@@ -11,19 +11,21 @@
 @media (min-width: 768px) {
   .ltr-box { padding: 48px; }
 }
-.ltr-box + .ltr-box { margin-top: 72px; }
+.ltr-box + .ltr-box { margin-top: 48px; }
 .ltr-box--mist { background: var(--mist); }
 .ltr-box--sand { background: var(--sand); }
 .ltr-box--surface { background: var(--surface); }
 .ltr-box p { font-size: 18px; line-height: 1.65; }
 .ltr-box p + p { margin-top: var(--space-4); }
 .ltr-box h2 {
-  font-size: clamp(28px, 3.6vw, 42px);
+  font-size: clamp(26px, 3vw, 36px);
   line-height: 1.05;
   letter-spacing: -0.03em;
   text-wrap: balance;
   margin-bottom: var(--space-5);
 }
+.ltr-box p + h2 { margin-top: var(--space-7); }
+.ltr-box a { font-weight: 700; text-underline-offset: 3px; }
 .ltr-box .highlight { box-shadow: var(--shadow-sm); }
 .ltr-box--mist .highlight { background: var(--raised); }
 .ltr-box .card__top { margin-bottom: var(--space-5); }
