@@ -3,17 +3,15 @@
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const finePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-// Scroll progress bar under the header, and the wordmark square turning as you scroll
+// Scroll progress bar under the header
 const progress = document.querySelector(".scroll-progress");
-const mark = document.querySelector(".wordmark__mark");
-if (progress || mark) {
+if (progress) {
   let queued = false;
   const update = () => {
     queued = false;
     const max = document.documentElement.scrollHeight - innerHeight;
     const ratio = max > 0 ? Math.min(scrollY / max, 1) : 0;
-    if (progress) progress.style.transform = `scaleX(${ratio})`;
-    if (mark && !reduceMotion) mark.style.rotate = `${scrollY * 0.25}deg`;
+    progress.style.transform = `scaleX(${ratio})`;
   };
   const queue = () => {
     if (!queued) {
