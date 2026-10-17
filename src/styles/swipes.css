@@ -65,6 +65,8 @@
 .swipe__fill { display: block; height: 100%; width: var(--w); background: var(--mist); }
 .swipe__fill--money { background: var(--rust); }
 .swipe__val { text-align: right; font-variant-numeric: tabular-nums; }
+/* Search ranking variant: word labels need a wider last column */
+.swipe__preview--rank .swipe__row { grid-template-columns: 28px 1fr 3em; }
 
 .swipe__title {
   font-size: clamp(22px, 2.3vw, var(--fs-h3));

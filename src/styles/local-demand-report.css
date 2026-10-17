@@ -1,0 +1,113 @@
+/* /local-demand-report: the letter on one paper sheet. Loads after global.css. */
+.ldr-page { padding-block: var(--space-6) var(--space-8); }
+@media (min-width: 768px) {
+  .ldr-page { padding-block: 56px var(--space-8); }
+}
+
+/* ---------- Swipe credit, above the sheet ---------- */
+.ldr-credit {
+  max-width: 680px;
+  margin: 0 auto var(--space-5);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.ldr-credit__back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--ink);
+}
+.ldr-credit__back:hover .btn__arrow { transform: translateX(-4px); }
+.ldr-credit__tag { margin: 0; text-transform: none; letter-spacing: .02em; }
+
+/* ---------- The sheet ---------- */
+.ldr-sheet {
+  max-width: 680px;
+  margin-inline: auto;
+  background: var(--sand);
+  border: var(--line);
+  box-shadow: var(--shadow-md);
+}
+@media (min-width: 768px) {
+  .ldr-sheet { box-shadow: var(--shadow-xl); }
+}
+
+.ldr-head,
+.ldr-body { padding-inline: var(--space-5); }
+@media (min-width: 768px) {
+  .ldr-head,
+  .ldr-body { padding-inline: 64px; }
+}
+
+/* Letterhead: logo mark, name, thin rule */
+.ldr-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-top: var(--space-6);
+}
+.ldr-head__name {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.ldr-body {
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-7);
+  font-size: 18px;
+  line-height: 1.7;
+}
+.ldr-head + .ldr-body {
+  border-top: var(--border-thin) solid var(--ink);
+  margin-top: var(--space-4);
+  margin-inline: var(--space-5);
+  padding-inline: 0;
+}
+@media (min-width: 768px) {
+  .ldr-head { padding-top: 56px; }
+  .ldr-body { padding-top: var(--space-7); padding-bottom: 56px; }
+  .ldr-head + .ldr-body { margin-inline: 64px; }
+}
+@media (max-width: 420px) {
+  .ldr-body { font-size: 17px; }
+}
+
+.ldr-title {
+  font-size: clamp(30px, 4.6vw, 42px);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+  margin-bottom: var(--space-6);
+}
+.ldr-body p + p { margin-top: 1.1em; }
+
+/* Sign-off: Space Grotesk, slanted and loosened to read like a signature */
+.ldr-body .ldr-sign { margin-top: var(--space-6); }
+.ldr-sig {
+  display: inline-block;
+  margin-top: var(--space-2) !important;
+  font-size: clamp(32px, 4.4vw, 40px);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--slate);
+  transform: rotate(-3deg);
+  transform-origin: 0 50%;
+  padding-bottom: 4px;
+  border-bottom: var(--border-thin) solid var(--rust);
+}
+
+/* Postscript: set apart, hanging "P.S." like a typed letter */
+.ldr-body .ldr-ps {
+  display: grid;
+  grid-template-columns: 3em 1fr;
+  margin-top: var(--space-7);
+}
+.ldr-ps__mark { font-weight: 700; color: var(--rust); }

@@ -19,6 +19,7 @@ const pages = {
   caseStudyTherapist: { file: "case-studies/therapist/index.html", path: "/case-studies/therapist", index: false },
   resources: { file: "resources/index.html", path: "/resources", index: true },
   twoBusinessOwners: { file: "two-business-owners/index.html", path: "/two-business-owners", index: false },
+  localDemandReport: { file: "local-demand-report/index.html", path: "/local-demand-report", index: false },
   comingSoon: { file: "coming-soon/index.html", path: "/coming-soon", index: false },
   privacy: { file: "privacy/index.html", path: "/privacy", index: false },
   // Vercel serves 404.html for any URL that doesn't exist.
