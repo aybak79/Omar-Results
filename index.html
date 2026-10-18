@@ -27,8 +27,9 @@
           <h1 id="hero-title" class="hero__title">You're great at what you do. <span class="highlight highlight--hero">Google hasn't noticed yet.</span></h1>
           <p class="lead hero__lead">I help US local businesses get found, get chosen, and get booked. I don't overpromise. I overdeliver.</p>
           <div class="hero__cta">
-            <a class="btn btn--primary btn--lg" href="#contact">Book your free 15-minute call <span class="btn__arrow" aria-hidden="true">→</span></a>
+            <a class="btn btn--primary btn--lg" href="#contact">Get your free 15-minute call <span class="btn__arrow" aria-hidden="true">→</span></a>
             <p class="hero__note">No pitch. Just strategy. Worst case, you leave with free ideas and a mild grudge against your last marketer.</p>
+            <a class="hero__alt" href="/audit">Not ready to talk? Start with the $97 audit <span class="btn__arrow" aria-hidden="true">→</span></a>
           </div>
         </div>
 
@@ -123,7 +124,7 @@
     </section>
 
     <!-- 4. Why trust me -->
-    <section class="section band band--slate" aria-labelledby="trust-title">
+    <section class="section band band--slate" id="proof" aria-labelledby="trust-title">
       <div class="container">
         <div class="section-head" data-reveal>
           <p class="eyebrow">Proof</p>
@@ -149,7 +150,28 @@
       </div>
     </section>
 
-    <!-- 5. How it works -->
+    <!-- 5. The audit, for visitors not ready for a call -->
+    <section class="section" aria-labelledby="audit-title">
+      <div class="container">
+        <div class="audit-promo" data-reveal>
+          <a class="audit-promo__cover" href="/audit" tabindex="-1" aria-hidden="true">
+            <span class="audit-promo__kicker">Omar Results</span>
+            <span class="audit-promo__name">Local Demand Audit</span>
+            <span class="audit-promo__for">prepared for <b>[Your Business]</b></span>
+            <span class="sticker audit-promo__sticker">$97</span>
+          </a>
+          <div class="audit-promo__copy">
+            <p class="eyebrow">Not ready to talk?</p>
+            <h2 id="audit-title" class="audit-promo__title">Get the audit. No meeting, no pitch, just answers.</h2>
+            <p>A 10-page report and a 10-minute video showing why customers are calling your competitors instead of you. $97, and every dollar comes off your project if you hire me after.</p>
+            <a class="btn btn--rust btn--lg" href="/audit">See the $97 audit <span class="btn__arrow" aria-hidden="true">→</span></a>
+            <p class="audit-promo__free">Not ready to spend $97? <a href="/resources">Try the free 5-Second Homepage Test.</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. How it works -->
     <section class="section" aria-labelledby="how-title">
       <div class="container">
         <div class="section-head" data-reveal>
@@ -204,7 +226,7 @@
       </div>
     </section>
 
-    <!-- 6. Services -->
+    <!-- 7. Services -->
     <section class="section band band--raised" aria-labelledby="services-title">
       <div class="container">
         <div class="section-head" data-reveal>
@@ -241,11 +263,11 @@
           </article>
         </div>
 
-        <p class="closing-line" data-reveal>Not sure which one fits? That's literally what the <a href="#contact">free 15-minute call</a> is for.</p>
+        <p class="closing-line" data-reveal>Not sure which one fits? That's what the <a href="#contact">free 15-minute call</a> is for. Or let the <a href="/audit">$97 audit</a> figure it out for you.</p>
       </div>
     </section>
 
-    <!-- 7. About -->
+    <!-- 8. About -->
     <section class="section" aria-labelledby="about-title">
       <div class="container about">
         <div class="about__photo" data-reveal>
@@ -272,7 +294,7 @@
       </div>
     </section>
 
-    <!-- 8. FAQ -->
+    <!-- 9. FAQ -->
     <section class="section band band--raised" aria-labelledby="faq-title">
       <div class="container faq-layout">
         <div class="section-head faq-layout__head" data-reveal>
@@ -310,7 +332,7 @@
           </div>
           <div class="faq__item">
             <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a8" id="faq-q8"><span>What does it cost?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-            <div class="faq__a" id="faq-a8" role="region" aria-labelledby="faq-q8"><div class="faq__inner"><p>It depends on what your business actually needs, which is exactly what the free call is for. No surprise fees, and everything is agreed on before any work starts.</p></div></div>
+            <div class="faq__a" id="faq-a8" role="region" aria-labelledby="faq-q8"><div class="faq__inner"><p>It depends on what your business actually needs, which is exactly what the free call is for. No surprise fees, and everything is agreed on before any work starts. Want to see how I think before committing to anything? Start with the <a href="/audit">$97 audit</a>.</p></div></div>
           </div>
           <div class="faq__item">
             <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a9" id="faq-q9"><span>Why trust one person over an agency?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
@@ -320,7 +342,7 @@
       </div>
     </section>
 
-    <!-- 9. Final CTA -->
+    <!-- 10. Final CTA -->
     <section class="cta" id="contact" aria-labelledby="cta-title">
       <div class="container cta__grid">
         <div class="cta__head" data-reveal>
@@ -329,6 +351,7 @@
         </div>
         <div class="cta__copy" data-reveal>
           <p class="cta__body">You've read this far, so something here clicked. Send me a message and tell me about your business. I'll reply personally, usually within a day. Worst case, you get free ideas. Best case, your phone gets a lot busier.</p>
+          <p class="cta__alt">Rather read than talk? <a href="/audit">Get the $97 audit.</a></p>
         </div>
 
         <div class="compose" data-reveal style="--d:1">
@@ -345,6 +368,14 @@
         </div>
       </div>
     </section>
+
+    <!-- 11. Referral strip, for readers who aren't the owner -->
+    <aside class="refer-strip" aria-label="Referral program">
+      <div class="container refer-strip__inner">
+        <p>Not the owner, but know one who's great and hard to find? Send me their name and I'll pay you <b>$100</b>.</p>
+        <a class="refer-strip__link" href="/referral">How referrals work <span class="btn__arrow" aria-hidden="true">→</span></a>
+      </div>
+    </aside>
   </main>
 
   <include src="partials/footer.html"></include>

@@ -445,6 +445,17 @@ body::after {
   font-weight: 500;
   color: var(--ink-muted);
 }
+.hero__alt {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  margin-top: var(--space-4);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration-color: var(--rust);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+.hero__alt:hover { background: var(--mist); }
+.hero__alt:hover .btn__arrow { transform: translateX(4px); }
 
 /* Before / after stack: all inner sizes scale with the stack width */
 .hero__visual { display: flex; justify-content: center; }
@@ -959,6 +970,60 @@ body::after {
   font-weight: 700;
 }
 
+/* ---------- Audit promo: the no-call way in ---------- */
+.audit-promo {
+  display: grid;
+  gap: var(--space-7);
+  align-items: center;
+  background: var(--sand);
+  border: var(--line);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-7) var(--space-5) var(--space-6);
+}
+@media (min-width: 900px) {
+  .audit-promo { grid-template-columns: 240px 1fr; gap: 56px; padding: 48px; }
+}
+.audit-promo__cover {
+  position: relative;
+  display: flex; flex-direction: column;
+  width: 200px;
+  aspect-ratio: 8.5 / 11;
+  justify-self: center;
+  background: var(--slate);
+  color: var(--on-slate);
+  text-decoration: none;
+  border: var(--line);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-4);
+  transform: rotate(-3deg);
+}
+.audit-promo__kicker {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--mist);
+  padding-bottom: var(--space-2);
+  border-bottom: var(--border-thin) solid var(--mist);
+}
+.audit-promo__name { margin-top: var(--space-4); font-size: 22px; font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; }
+.audit-promo__for { margin-top: auto; font-size: 12px; font-weight: 500; color: var(--mist); }
+.audit-promo__for b { display: inline-block; margin-top: 2px; background: var(--rust); color: var(--on-rust); padding: 1px .2em; }
+.audit-promo__sticker { position: absolute; top: -18px; right: -22px; font-size: 18px; }
+.audit-promo__copy { min-width: 0; }
+.audit-promo__title {
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  max-width: 22ch;
+  text-wrap: balance;
+  margin-bottom: var(--space-4);
+}
+.audit-promo__copy > p:not(.eyebrow):not(.audit-promo__free) { max-width: 560px; font-size: clamp(17px, 1.6vw, 18px); font-weight: 500; margin-bottom: var(--space-6); }
+.audit-promo__free { margin-top: var(--space-5); font-size: 15px; font-weight: 500; }
+.audit-promo__free a { font-weight: 700; }
+
 /* ---------- Process ---------- */
 .process {
   display: grid;
@@ -1223,6 +1288,22 @@ html:not(.js) .faq__a { grid-template-rows: 1fr; visibility: visible; }
   max-width: 680px;
 }
 
+/* ---------- Referral strip: for readers who aren't the owner ---------- */
+.refer-strip { background: var(--sand); border-top: var(--line); padding-block: var(--space-5); }
+.refer-strip__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3) var(--space-6); }
+.refer-strip p { font-size: clamp(16px, 1.6vw, 18px); font-weight: 500; max-width: 720px; }
+.refer-strip b { color: var(--rust); }
+.refer-strip__link {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration-color: var(--rust);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+.refer-strip__link:hover { background: var(--raised); }
+.refer-strip__link:hover .btn__arrow { transform: translateX(4px); }
+
 /* ---------- Final CTA ---------- */
 .cta {
   background: var(--slate);
@@ -1252,6 +1333,9 @@ html:not(.js) .faq__a { grid-template-rows: 1fr; visibility: visible; }
   font-size: clamp(18px, 1.7vw, var(--fs-lead));
   line-height: 1.5;
 }
+.cta__alt { margin-top: var(--space-5); font-size: 17px; font-weight: 500; }
+.cta__alt a { color: var(--on-slate); font-weight: 700; text-decoration-color: var(--mist); text-underline-offset: 4px; }
+.cta__alt a:hover { color: var(--mist); }
 
 .compose {
   position: relative;
