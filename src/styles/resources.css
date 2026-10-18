@@ -201,6 +201,15 @@
 }
 .quiz__done-title:focus { outline: none; }
 .quiz__download { width: 100%; }
+.quiz__done-audit {
+  margin-top: var(--space-5);
+  background: var(--sand);
+  border: var(--border-thin) solid var(--ink);
+  padding: var(--space-3) var(--space-4);
+  font-weight: 500;
+  line-height: 1.5;
+}
+.quiz__done-audit a { font-weight: 700; color: var(--ink); text-decoration-color: var(--rust); text-decoration-thickness: 2px; text-underline-offset: 3px; white-space: nowrap; }
 .quiz__done-body { margin-top: var(--space-5); line-height: 1.55; }
 .quiz__done-body a { font-weight: 700; color: var(--ink); word-break: break-word; }
 
