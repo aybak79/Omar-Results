@@ -8,10 +8,6 @@ const sections = {
     name: "Case studies",
     line: "You clicked Case studies. More case files are being written up right now. Real numbers only, so they take a little longer.",
   },
-  referral: {
-    name: "Referral program",
-    line: "You clicked Referral program. It's being built as we speak. Short version: send a business my way, and you'll be glad you did.",
-  },
   resources: {
     name: "Resources",
     line: "You clicked Resources. Free guides and templates are on the way. Useful ones, not 40-page PDFs nobody finishes.",

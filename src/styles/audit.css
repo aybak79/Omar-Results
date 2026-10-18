@@ -1,0 +1,244 @@
+/* Page-specific pieces for /audit. Everything else comes from global.css. */
+
+/* ---------- Shared layout: heading on the left, prose on the right ---------- */
+.audit-split { display: grid; gap: var(--space-2) var(--space-7); align-items: start; }
+@media (min-width: 1000px) {
+  .audit-split { grid-template-columns: 1fr 1fr; }
+}
+.audit-prose { display: grid; gap: var(--space-4); max-width: 620px; font-size: clamp(17px, 1.6vw, 18px); line-height: 1.55; }
+.audit-prose__punch { font-weight: 700; }
+
+/* ---------- Hero ---------- */
+.audit-hero__title { font-size: clamp(36px, 4.6vw, 60px); line-height: 1; text-wrap: balance; }
+
+/* Report cover with the scorecard page peeking out behind it */
+.report {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1 / 1.08;
+  margin-right: var(--space-5);
+}
+.report__sheet, .report__cover {
+  position: absolute;
+  width: 72%;
+  aspect-ratio: 8.5 / 11;
+  border: var(--line);
+  padding: var(--space-4);
+}
+.report__sheet {
+  top: 0; right: 0;
+  background: var(--raised);
+  box-shadow: var(--shadow-md);
+  transform: rotate(5deg);
+}
+.report__cover {
+  bottom: 0; left: 0;
+  display: flex; flex-direction: column;
+  background: var(--slate);
+  color: var(--on-slate);
+  box-shadow: var(--shadow-xl);
+  transform: rotate(-3deg);
+}
+.report__kicker {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  padding-bottom: var(--space-2);
+  border-bottom: var(--border-thin) solid currentColor;
+}
+.report__kicker--cover { color: var(--mist); }
+.report__title { margin-top: var(--space-4); font-size: clamp(22px, 2.4vw, 28px); font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; }
+.report__for { margin-top: var(--space-4); font-size: 14px; font-weight: 500; line-height: 1.6; color: var(--mist); }
+.report__hl { background: var(--rust); color: var(--on-rust); font-weight: 700; padding: 1px .2em; }
+.report__by { margin-top: auto; font-size: 12px; font-weight: 700; color: var(--mist); }
+.report__sticker { position: absolute; top: 46%; right: -14px; z-index: 1; }
+
+.score { display: grid; gap: 10px; margin-top: var(--space-4); }
+.score li { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); font-size: 13px; font-weight: 700; }
+.score__dot { width: 16px; height: 16px; border-radius: 50%; border: var(--border-thin) solid var(--ink); }
+.score__dot--red { background: var(--rust); }
+.score__dot--yellow { background: #D9B45A; }
+.score__dot--green { background: #6E9A7A; }
+
+/* ---------- What you get ---------- */
+.inside {
+  background: var(--raised);
+  border: var(--line);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-6) var(--space-5);
+}
+@media (min-width: 900px) {
+  .inside { padding: 40px; }
+  .inside__list { grid-template-columns: 1fr 1fr; gap: var(--space-5) var(--space-7); }
+}
+.inside__title, .video__title {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3);
+  font-size: clamp(22px, 2.3vw, 28px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-6);
+}
+.inside__title .tag, .video__title .tag { margin-bottom: 0; }
+.inside__list li::before { background: var(--rust); color: var(--on-rust); }
+
+.video {
+  margin-top: var(--space-7);
+  display: grid; gap: var(--space-5);
+  align-items: center;
+  background: var(--sand);
+  border: var(--line);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-6) var(--space-5);
+}
+@media (min-width: 768px) {
+  .video { grid-template-columns: auto 1fr; gap: var(--space-6); padding: 40px; }
+}
+.video__title { margin-bottom: var(--space-3); }
+.video p { max-width: 640px; }
+.video__play {
+  display: grid; place-items: center;
+  width: 84px; height: 84px;
+  background: var(--rust);
+  border: var(--line);
+  box-shadow: var(--shadow-md);
+}
+.video__play svg { width: 40px; height: 40px; fill: var(--on-rust); margin-left: 4px; }
+
+/* ---------- Price ---------- */
+.price {
+  background: var(--surface);
+  border: var(--line);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-6);
+  max-width: 460px;
+  width: 100%;
+  justify-self: center;
+  transform: rotate(var(--tilt-card));
+}
+.price__row { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-4); }
+.price__row + .price__row { margin-top: var(--space-4); padding-top: var(--space-4); border-top: var(--border-thin) dashed var(--ink); }
+.price__label { font-size: var(--fs-label); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.price__old {
+  font-size: clamp(36px, 4vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-decoration: line-through;
+  text-decoration-color: var(--rust);
+  text-decoration-thickness: 6px;
+}
+.price__new { font-size: clamp(64px, 7vw, 92px); font-weight: 700; line-height: .9; letter-spacing: -0.05em; color: var(--rust); }
+.price__note { margin-top: var(--space-5); font-size: 15px; font-weight: 700; }
+
+/* ---------- What you won't get ---------- */
+.nope { display: grid; gap: var(--space-4); }
+@media (min-width: 768px) {
+  .nope { grid-template-columns: 1fr 1fr; }
+}
+.nope li {
+  position: relative;
+  background: var(--raised);
+  border: var(--line);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-4) var(--space-5) var(--space-4) 64px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.nope li::before {
+  content: "×";
+  position: absolute; left: var(--space-4); top: 50%;
+  transform: translateY(-50%);
+  display: grid; place-items: center;
+  width: 30px; height: 30px;
+  font-size: 24px; line-height: 1;
+  color: var(--on-rust);
+  background: var(--rust);
+  border: var(--border-thin) solid var(--ink);
+}
+
+/* ---------- Proof ---------- */
+.proof__result { font-size: clamp(19px, 1.9vw, 22px); font-weight: 700; color: var(--mist); }
+.proof__num { font-size: 1.6em; line-height: 1; }
+.proof__link { justify-self: start; margin-top: var(--space-3); background: var(--raised); color: var(--ink); }
+
+/* ---------- Guarantee ---------- */
+.guarantee {
+  position: relative;
+  max-width: 880px;
+  background: var(--sand);
+  border: var(--line);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-6) var(--space-5);
+}
+@media (min-width: 768px) {
+  .guarantee { padding: 48px 200px 48px 48px; }
+}
+.guarantee__title { font-size: var(--fs-h2); line-height: 1; letter-spacing: -0.03em; margin-bottom: var(--space-4); text-wrap: balance; }
+.guarantee p { max-width: 560px; font-size: clamp(17px, 1.6vw, 19px); font-weight: 500; }
+.guarantee__stamp {
+  display: grid; place-items: center;
+  width: 120px; height: 120px;
+  margin-bottom: var(--space-5);
+  border-radius: 50%;
+  border: 4px double var(--rust);
+  outline: var(--border-thick) solid var(--rust);
+  outline-offset: 4px;
+  color: var(--rust);
+  background: var(--raised);
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: .1em;
+  text-align: center;
+  text-transform: uppercase;
+  transform: rotate(-12deg);
+}
+@media (min-width: 768px) {
+  .guarantee__stamp { position: absolute; top: 50%; right: 40px; margin: -60px 0 0; }
+}
+
+/* ---------- Scarcity strip ---------- */
+.scarcity {
+  background: var(--slate);
+  color: var(--mist);
+  border-block: var(--line);
+  padding-block: var(--space-5);
+  font-size: clamp(19px, 2.2vw, 26px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+.scarcity .container { display: block; }
+
+/* ---------- Final CTA: the email they're about to send ---------- */
+.audit-cta__title { max-width: 16ch; }
+.request {
+  background: var(--raised);
+  color: var(--ink);
+  border: var(--line);
+  box-shadow: var(--shadow-xl);
+  padding: var(--space-5);
+  max-width: 560px;
+  width: 100%;
+  justify-self: end;
+}
+@media (min-width: 768px) {
+  .request { padding: var(--space-6); }
+}
+.mail {
+  background: var(--sand);
+  border: var(--line);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--space-6);
+  font-size: 15px;
+}
+.mail__row { padding: var(--space-2) var(--space-4); border-bottom: var(--border-thin) solid var(--ink); overflow-wrap: anywhere; }
+.mail__body { display: grid; gap: var(--space-3); padding: var(--space-4); font-weight: 500; }
+.mail__fields { line-height: 1.7; }
+.request__note { margin-top: var(--space-5); font-weight: 700; }
+.request__fallback { margin-top: var(--space-2); font-size: var(--fs-small); font-weight: 500; color: var(--ink-muted); }
+.request__fallback a { color: var(--ink); font-weight: 700; overflow-wrap: anywhere; }

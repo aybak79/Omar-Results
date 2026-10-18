@@ -18,6 +18,8 @@ const pages = {
   caseStudies: { file: "case-studies/index.html", path: "/case-studies", index: false },
   caseStudyTherapist: { file: "case-studies/therapist/index.html", path: "/case-studies/therapist", index: false },
   resources: { file: "resources/index.html", path: "/resources", index: true },
+  referral: { file: "referral/index.html", path: "/referral", index: true },
+  audit: { file: "audit/index.html", path: "/audit", index: true },
   twoBusinessOwners: { file: "two-business-owners/index.html", path: "/two-business-owners", index: false },
   localDemandReport: { file: "local-demand-report/index.html", path: "/local-demand-report", index: false },
   comingSoon: { file: "coming-soon/index.html", path: "/coming-soon", index: false },

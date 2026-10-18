@@ -1,0 +1,39 @@
+/* Page-specific pieces for /referral. Everything else comes from global.css. */
+
+/* ---------- Hero ---------- */
+.ref-hero__title { font-size: clamp(34px, 4.4vw, 58px); line-height: 1; text-wrap: balance; }
+.ref-money { color: var(--rust); }
+
+/* The client's message, framed and tilted like a pinned screenshot */
+.ref-shot {
+  width: 100%;
+  max-width: 520px;
+  transform: rotate(1.5deg);
+}
+.ref-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: var(--line);
+  box-shadow: var(--shadow-lg);
+}
+.ref-shot figcaption {
+  margin-top: var(--space-5);
+  font-size: 15px;
+  font-weight: 700;
+  transform: rotate(-1.5deg);
+}
+
+/* ---------- How it works: three steps instead of the homepage's four ---------- */
+@media (min-width: 1000px) {
+  .process--3 { grid-template-columns: repeat(3, 1fr); }
+}
+.callout--single { display: block; }
+.callout--single p:not(.callout__title) { font-size: clamp(18px, 1.7vw, var(--fs-lead)); font-weight: 500; }
+.callout--single .callout__title { font-weight: 700; margin-bottom: var(--space-3); }
+
+/* ---------- Final CTA ---------- */
+.ref-cta__title { max-width: 16ch; }
+.ref-cta__actions { margin-top: var(--space-7); }
+.ref-cta__note { margin-top: var(--space-4); font-size: 15px; font-weight: 500; }
+.ref-cta__note a { color: var(--on-slate); font-weight: 700; overflow-wrap: anywhere; }
