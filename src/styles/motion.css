@@ -69,9 +69,7 @@
   to { scale: 1; }
 }
 
-/* ---------- Eyebrow star spins, chips lift ---------- */
-.eyebrow > span[aria-hidden] { display: inline-block; transition: rotate .6s var(--ease); }
-.eyebrow:hover > span[aria-hidden] { rotate: 360deg; }
+/* ---------- Chips lift ---------- */
 
 .chip { transition: translate .15s var(--ease), box-shadow .15s var(--ease), background-color .15s; }
 .chip > span { display: inline-block; transition: rotate .3s var(--ease), scale .3s var(--ease); }

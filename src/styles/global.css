@@ -178,24 +178,7 @@ body::after {
   .grid-2 { grid-template-columns: 1fr 1fr; gap: var(--space-6); }
 }
 
-/* ---------- Eyebrow, Highlight, Tag, Sticker ---------- */
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-size: var(--fs-label);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--ink);
-  background: var(--sand);
-  border: var(--line);
-  box-shadow: var(--shadow-sm);
-  padding: 6px var(--space-3);
-  margin-bottom: var(--space-5);
-}
-
+/* ---------- Highlight, Tag, Sticker ---------- */
 .highlight {
   display: inline-block;
   background: var(--mist);
@@ -1020,7 +1003,7 @@ body::after {
   text-wrap: balance;
   margin-bottom: var(--space-4);
 }
-.audit-promo__copy > p:not(.eyebrow):not(.audit-promo__free) { max-width: 560px; font-size: clamp(17px, 1.6vw, 18px); font-weight: 500; margin-bottom: var(--space-6); }
+.audit-promo__copy > p:not(.audit-promo__free) { max-width: 560px; font-size: clamp(17px, 1.6vw, 18px); font-weight: 500; margin-bottom: var(--space-6); }
 .audit-promo__free { margin-top: var(--space-5); font-size: 15px; font-weight: 500; }
 .audit-promo__free a { font-weight: 700; }
 
@@ -1187,7 +1170,7 @@ body::after {
 @media (min-width: 900px) {
   .sticker--hi { right: -28px; }
 }
-.about__copy p:not(.eyebrow) { font-size: 17px; max-width: 640px; }
+.about__copy p { font-size: 17px; max-width: 640px; }
 .about__copy .section-title { margin-bottom: var(--space-6); }
 .about__copy p + p { margin-top: var(--space-4); }
 .about__copy .about__more { margin-top: var(--space-6); font-weight: 700; }
